@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/Users/eneedley/dev/cpp/UPPS/build",
+  "command": "/usr/bin/c++  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -std=gnu++17 -arch arm64 -o CMakeFiles/UPPS.dir/src/main.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/main.cpp",
+  "file": "/Users/eneedley/dev/cpp/UPPS/src/main.cpp",
+  "output": "CMakeFiles/UPPS.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/eneedley/dev/cpp/UPPS/build",
+  "command": "/usr/bin/cc  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks  -arch arm64 -o CMakeFiles/UPPS.dir/external/glad/glad.c.o -c /Users/eneedley/dev/cpp/UPPS/external/glad/glad.c",
+  "file": "/Users/eneedley/dev/cpp/UPPS/external/glad/glad.c",
+  "output": "CMakeFiles/UPPS.dir/external/glad/glad.c.o"
+}
+]
