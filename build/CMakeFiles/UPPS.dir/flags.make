@@ -7,15 +7,15 @@ C_DEFINES =
 
 C_INCLUDES = -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
 
-C_FLAGSarm64 =  -arch arm64
+C_FLAGSarm64 = -g -arch arm64
 
-C_FLAGS =  -arch arm64
+C_FLAGS = -g -arch arm64
 
 CXX_DEFINES = 
 
 CXX_INCLUDES = -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
 
-CXX_FLAGSarm64 = -std=gnu++17 -arch arm64
+CXX_FLAGSarm64 = -g -std=gnu++17 -arch arm64
 
-CXX_FLAGS = -std=gnu++17 -arch arm64
+CXX_FLAGS = -g -std=gnu++17 -arch arm64
 
