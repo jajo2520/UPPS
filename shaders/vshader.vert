@@ -1,8 +1,11 @@
 #version 410 core
 in vec2 aPos;
-uniform float xTrans;
-uniform float yTrans;
+uniform vec2 pos;
+uniform vec2 screenSize;
 void main()
 {
-    gl_Position = vec4(aPos.x + xTrans, aPos.y + yTrans, 0.0,  1.0);
+    vec2 currentPos = aPos;
+    currentPos += pos;
+    vec2 clipSpace = (currentPos / screenSize) * 2.0 - 1.0; 
+    gl_Position = vec4(clipSpace, 0.0, 1.0); 
 }

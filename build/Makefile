@@ -153,6 +153,30 @@ external/glad/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/external/glad/glad.c.s
 .PHONY : external/glad/glad.c.s
 
+src/Particle.o: src/Particle.cpp.o
+.PHONY : src/Particle.o
+
+# target to build an object file
+src/Particle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/Particle.cpp.o
+.PHONY : src/Particle.cpp.o
+
+src/Particle.i: src/Particle.cpp.i
+.PHONY : src/Particle.i
+
+# target to preprocess a source file
+src/Particle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/Particle.cpp.i
+.PHONY : src/Particle.cpp.i
+
+src/Particle.s: src/Particle.cpp.s
+.PHONY : src/Particle.s
+
+# target to generate assembly for a file
+src/Particle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/Particle.cpp.s
+.PHONY : src/Particle.cpp.s
+
 src/Renderer.o: src/Renderer.cpp.o
 .PHONY : src/Renderer.o
 
@@ -177,53 +201,29 @@ src/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/Renderer.cpp.s
 .PHONY : src/Renderer.cpp.s
 
-src/particle.o: src/particle.cpp.o
-.PHONY : src/particle.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/particle.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/particle.cpp.o
-.PHONY : src/particle.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/particle.i: src/particle.cpp.i
-.PHONY : src/particle.i
-
-# target to preprocess a source file
-src/particle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/particle.cpp.i
-.PHONY : src/particle.cpp.i
-
-src/particle.s: src/particle.cpp.s
-.PHONY : src/particle.s
-
-# target to generate assembly for a file
-src/particle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/particle.cpp.s
-.PHONY : src/particle.cpp.s
-
-src/test.o: src/test.cpp.o
-.PHONY : src/test.o
-
-# target to build an object file
-src/test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/test.cpp.o
-.PHONY : src/test.cpp.o
-
-src/test.i: src/test.cpp.i
-.PHONY : src/test.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/test.cpp.i
-.PHONY : src/test.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/test.s: src/test.cpp.s
-.PHONY : src/test.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/test.cpp.s
-.PHONY : src/test.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -237,15 +237,15 @@ help:
 	@echo "... external/glad/glad.o"
 	@echo "... external/glad/glad.i"
 	@echo "... external/glad/glad.s"
+	@echo "... src/Particle.o"
+	@echo "... src/Particle.i"
+	@echo "... src/Particle.s"
 	@echo "... src/Renderer.o"
 	@echo "... src/Renderer.i"
 	@echo "... src/Renderer.s"
-	@echo "... src/particle.o"
-	@echo "... src/particle.i"
-	@echo "... src/particle.s"
-	@echo "... src/test.o"
-	@echo "... src/test.i"
-	@echo "... src/test.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

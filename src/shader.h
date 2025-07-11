@@ -4,14 +4,15 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <glm/glm.hpp>
 
 class Shader
 {
 public:
     unsigned int ID;
+    Shader() = default;
     Shader(const char* vertexPath, const char* fragmentPath)
     {
-        std::cout << "We're in the constructor" << std::endl;
         std::string vertexCode;
         std::string fragmentCode;
         std::ifstream vShaderFile;
@@ -52,7 +53,6 @@ public:
         }
         const char* vShaderCode = vertexCode.c_str();
         const char* fShaderCode = fragmentCode.c_str();
-        std::cout << "successfully turned into code" << std::endl;
         unsigned int vertex, fragment;
         int success;
         char infoLog[512];
@@ -78,7 +78,6 @@ public:
             glGetShaderInfoLog(fragment, 512, NULL, infoLog);
             std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
         };
-        std::cout << "Created shader program" << std::endl;
           
         // shader Program
         ID = glCreateProgram();
@@ -96,6 +95,7 @@ public:
         glDeleteShader(vertex);
         glDeleteShader(fragment);
     }
+    Shader& operator=(const Shader& other) = default;
     void use()
     {
         glUseProgram(ID);
@@ -111,6 +111,10 @@ public:
     void setFloat(const std::string &name, float value) const
     {
         glUniform1f(glGetUniformLocation(ID, name.c_str()), value); 
+    }
+    void setVec2(const std::string &name, glm::vec2 value) const
+    {
+        glUniform2f(glGetUniformLocation(ID, name.c_str()), value.x, value.y);
     }
     
 };

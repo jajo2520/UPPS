@@ -1,25 +1,25 @@
 [
 {
   "directory": "/Users/eneedley/dev/cpp/UPPS/build",
-  "command": "/usr/bin/c++  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64 -o CMakeFiles/UPPS.dir/src/Renderer.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/Renderer.cpp",
+  "command": "/usr/bin/c++  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/Users/eneedley/dev/cpp/UPPS/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64 -o CMakeFiles/UPPS.dir/src/Particle.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/Particle.cpp",
+  "file": "/Users/eneedley/dev/cpp/UPPS/src/Particle.cpp",
+  "output": "CMakeFiles/UPPS.dir/src/Particle.cpp.o"
+},
+{
+  "directory": "/Users/eneedley/dev/cpp/UPPS/build",
+  "command": "/usr/bin/c++  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/Users/eneedley/dev/cpp/UPPS/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64 -o CMakeFiles/UPPS.dir/src/Renderer.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/Renderer.cpp",
   "file": "/Users/eneedley/dev/cpp/UPPS/src/Renderer.cpp",
   "output": "CMakeFiles/UPPS.dir/src/Renderer.cpp.o"
 },
 {
   "directory": "/Users/eneedley/dev/cpp/UPPS/build",
-  "command": "/usr/bin/c++  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64 -o CMakeFiles/UPPS.dir/src/particle.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/particle.cpp",
-  "file": "/Users/eneedley/dev/cpp/UPPS/src/particle.cpp",
-  "output": "CMakeFiles/UPPS.dir/src/particle.cpp.o"
+  "command": "/usr/bin/c++  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/Users/eneedley/dev/cpp/UPPS/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64 -o CMakeFiles/UPPS.dir/src/main.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/main.cpp",
+  "file": "/Users/eneedley/dev/cpp/UPPS/src/main.cpp",
+  "output": "CMakeFiles/UPPS.dir/src/main.cpp.o"
 },
 {
   "directory": "/Users/eneedley/dev/cpp/UPPS/build",
-  "command": "/usr/bin/c++  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64 -o CMakeFiles/UPPS.dir/src/test.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/test.cpp",
-  "file": "/Users/eneedley/dev/cpp/UPPS/src/test.cpp",
-  "output": "CMakeFiles/UPPS.dir/src/test.cpp.o"
-},
-{
-  "directory": "/Users/eneedley/dev/cpp/UPPS/build",
-  "command": "/usr/bin/cc  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -arch arm64 -o CMakeFiles/UPPS.dir/external/glad/glad.c.o -c /Users/eneedley/dev/cpp/UPPS/external/glad/glad.c",
+  "command": "/usr/bin/cc  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/Users/eneedley/dev/cpp/UPPS/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -arch arm64 -o CMakeFiles/UPPS.dir/external/glad/glad.c.o -c /Users/eneedley/dev/cpp/UPPS/external/glad/glad.c",
   "file": "/Users/eneedley/dev/cpp/UPPS/external/glad/glad.c",
   "output": "CMakeFiles/UPPS.dir/external/glad/glad.c.o"
 }

@@ -1,7 +1,6 @@
-#include <iostream>
 #include <vector>
 #include <cmath>
-#include "particle.h"
+#include "Particle.h"
 
 constexpr double PI {3.141592653};
 using size_t = std::size_t;
@@ -28,10 +27,9 @@ Particle::Particle(float radius) : mRadius {radius}, mVertices{std::vector<float
 }
 
 float Particle::radius() { return mRadius; }
-float Particle::xTrans() { return mXTrans; }
-float Particle::yTrans() { return mYTrans; }
+glm::vec2 Particle::pos() { return mPos; }
+glm::vec2 Particle::vel() { return mVel; }
 std::vector<float>& Particle::vertices() { return mVertices; }
 
-void Particle::setXTrans(float x) { mXTrans = x; };
-void Particle::setYTrans(float y) { mYTrans = y; };
-
+void Particle::setPos(glm::vec2 vec) { mPos = vec; };
+void Particle::setVel(glm::vec2 vec) { mVel = vec; };

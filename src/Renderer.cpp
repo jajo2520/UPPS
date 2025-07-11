@@ -1,24 +1,23 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "particle.h"
-#include "shader.h"
+#include "Particle.h"
 #include "Renderer.h"
-#include <optional>
-
+#include "Shader.h"
+#include <glm/glm.hpp>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height); 
 
 Renderer::Renderer()
 {
     initialiseWindow();
-    mShaderProgram.emplace("../shaders/vshader.vert", "../shaders/fshader.frag");
-    mShaderProgram->use();
-    // basically this shader construction needs to be delayed until window is initalised
+    mShaderProgram = Shader("../shaders/vshader.vert", "../shaders/fshader.frag");
+    mShaderProgram.use();
     initialiseBuffers();
 }
 
 const unsigned int& Renderer::VBO() { return mVBO; }
 const unsigned int& Renderer::VAO() { return mVAO; }
+Shader& Renderer::shaderProgram() { return mShaderProgram; }
 GLFWwindow* Renderer::window() { return mWindow; }
 
 int Renderer::initialiseWindow()
@@ -73,6 +72,9 @@ void Renderer::draw(Particle particle)
 
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+
+    shaderProgram().setVec2("pos", particle.pos());
+    shaderProgram().setVec2("screenSize", glm::vec2(800, 800));
 
     glDrawArrays(GL_TRIANGLE_FAN, 0, verticesNum+2);
 }

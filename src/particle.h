@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <glm/glm.hpp>
 
 constexpr std::size_t verticesNum {15};
 
@@ -7,16 +8,19 @@ class Particle
 {
 private:
     float mRadius {};
-    float mXTrans {};
-    float mYTrans {};
+    glm::vec2 mPos {};
+    glm::vec2 mVel {};
     std::vector<float> mVertices;
+
     void genGeometry();
 public:
     Particle(float radius); 
+
     float radius();
     std::vector<float>& vertices();
-    float xTrans();
-    float yTrans();
-    void setXTrans(float x);
-    void setYTrans(float y);
+    glm::vec2 pos();
+    glm::vec2 vel();
+
+    void setPos(glm::vec2 vec);
+    void setVel(glm::vec2 vec);
 };

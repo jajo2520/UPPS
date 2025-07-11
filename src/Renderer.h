@@ -1,9 +1,8 @@
 #pragma once
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "particle.h"
-#include "shader.h"
-#include <optional>
+#include "Particle.h"
+#include "Shader.h"
 
 class Renderer
 {
@@ -13,6 +12,7 @@ public:
     void draw(std::vector<Particle> particles);
     const unsigned int& VBO();
     const unsigned int& VAO();
+    Shader& shaderProgram();
     GLFWwindow* window();
 
 private:
@@ -21,5 +21,5 @@ private:
     GLFWwindow* mWindow;
     unsigned int mVBO;
     unsigned int mVAO;
-    std::optional<Shader> mShaderProgram;
+    Shader mShaderProgram;
 };

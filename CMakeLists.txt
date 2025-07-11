@@ -10,6 +10,7 @@ set(GLAD_SRC external/glad/glad.c)
 
 include_directories(
     external/glad/include
+    include
 )
 
 find_package(OpenGL REQUIRED)
