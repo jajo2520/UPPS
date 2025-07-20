@@ -4,8 +4,10 @@
 #include "Renderer.h"
 #include "Shader.h"
 #include <glm/glm.hpp>
+#include "ParticleQueue.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height); 
+
 
 Renderer::Renderer()
 {
@@ -46,8 +48,11 @@ int Renderer::initialiseWindow()
     
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
+    int frameBufferWidth, frameBufferHeight;
+    glfwGetFramebufferSize(window, &frameBufferWidth, &frameBufferHeight);
+
     // tell OpenGL how big our GLFW window is 
-    glViewport(0, 0, 800, 800); // first two is loc of bottom left of window
+    glViewport(0, 0, frameBufferWidth, frameBufferHeight); // first two is loc of bottom left of window
     std::cout << "all good;";
     mWindow = window;
     return 0;
@@ -78,7 +83,14 @@ void Renderer::draw(Particle particle)
 
     glDrawArrays(GL_TRIANGLE_FAN, 0, verticesNum+2);
 }
-//void Renderer::draw(std::vector<Particle> particles);
+
+void Renderer::draw(ParticleQueue particles)
+{
+    for (Particle& particle : particles)
+    {
+        Renderer::draw(particle);
+    }
+}
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)

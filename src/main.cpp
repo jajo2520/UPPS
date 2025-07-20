@@ -3,26 +3,36 @@
 #include <GLFW/glfw3.h>
 #include "Particle.h"
 #include "Renderer.h"
+#include <vector>
 #include <glm/glm.hpp>
-
+// for random num
+#include "RNG.h"
+#include "ParticleQueue.h"
 
 void processInput(GLFWwindow* window);
-GLfloat deltaTime = 0.0f; 
-GLfloat lastFrame = 0.0f;
+GLfloat deltaTime {}; 
+GLfloat lastFrame {};
+int frameCount {};
+GLfloat accumulator {};
+float COFR {0.8};
+float timeStep {0.0167}; // 60 fps
+RNG rng {};
 
 int main()
 {
 
-    Particle particle(50);
-    glm::vec2 pos(400, 700);
-    glm::vec2 vel {};
-
+    ParticleQueue particles(1000, 2);
+    for (auto& particle : particles)
+    {
+        particle.pos() = glm::vec2(rng.randInt(100, 700), rng.randInt(100, 700));
+    }
     Renderer renderer;
     GLFWwindow* window {renderer.window()};
     // RENDER LOOP
     while (!glfwWindowShouldClose(window))
     {
         processInput(window);
+        frameCount += 1;
 
         GLfloat currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
@@ -31,18 +41,33 @@ int main()
         glClearColor(0.2f, 0.2f, 0.2f, 1);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        vel += glm::vec2(0.0f, -9.8f) * deltaTime;
-        pos += particle.vel();
+        accumulator += deltaTime;
+        while (accumulator >= timeStep)
+        {     
+            for (auto& particle : particles)
+            {
+                if (std::abs(particle.vel().y) < 0.01 && frameCount > 100 && particle.pos().y <= 50) 
+                {
+                    particle.pos().y = 45;
+                    particle.vel().y = 0;
+                }
+                else if (particle.pos().y < 45 && particle.vel().y < 0)
+                {
+                    particle.vel().y *= -COFR;
+                    particle.pos().y = 45;
+                }
+                else 
+                {
+                    particle.pos() += particle.vel() * timeStep;
+                    particle.vel() += glm::vec2(0.0f, -400.f) * timeStep;
+                }
+                
+                renderer.draw(particle);
+            }
 
-        if (particle.pos().y < 45 && particle.vel().y < 0)
-        {
-            vel.y *= -1;
+            accumulator -= timeStep;
+
         }
-        
-        particle.setVel(vel);
-        particle.setPos(pos);
-
-        renderer.draw(particle);
 
         glfwSwapBuffers(window);
         glfwPollEvents();

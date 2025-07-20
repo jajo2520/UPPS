@@ -177,6 +177,30 @@ src/Particle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/Particle.cpp.s
 .PHONY : src/Particle.cpp.s
 
+src/ParticleQueue.o: src/ParticleQueue.cpp.o
+.PHONY : src/ParticleQueue.o
+
+# target to build an object file
+src/ParticleQueue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o
+.PHONY : src/ParticleQueue.cpp.o
+
+src/ParticleQueue.i: src/ParticleQueue.cpp.i
+.PHONY : src/ParticleQueue.i
+
+# target to preprocess a source file
+src/ParticleQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.i
+.PHONY : src/ParticleQueue.cpp.i
+
+src/ParticleQueue.s: src/ParticleQueue.cpp.s
+.PHONY : src/ParticleQueue.s
+
+# target to generate assembly for a file
+src/ParticleQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.s
+.PHONY : src/ParticleQueue.cpp.s
+
 src/Renderer.o: src/Renderer.cpp.o
 .PHONY : src/Renderer.o
 
@@ -240,6 +264,9 @@ help:
 	@echo "... src/Particle.o"
 	@echo "... src/Particle.i"
 	@echo "... src/Particle.s"
+	@echo "... src/ParticleQueue.o"
+	@echo "... src/ParticleQueue.i"
+	@echo "... src/ParticleQueue.s"
 	@echo "... src/Renderer.o"
 	@echo "... src/Renderer.i"
 	@echo "... src/Renderer.s"

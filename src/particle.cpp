@@ -25,11 +25,13 @@ Particle::Particle(float radius) : mRadius {radius}, mVertices{std::vector<float
 {
     genGeometry();
 }
+Particle::Particle(float radius, float xpos, float ypos) : mRadius {radius}, mVertices{std::vector<float>(2*(verticesNum+2))}, mPos{glm::vec2(xpos, ypos)}
+{
+    genGeometry();
+}
 
 float Particle::radius() { return mRadius; }
-glm::vec2 Particle::pos() { return mPos; }
-glm::vec2 Particle::vel() { return mVel; }
+glm::vec2& Particle::pos() { return mPos; }
+glm::vec2& Particle::vel() { return mVel; }
 std::vector<float>& Particle::vertices() { return mVertices; }
 
-void Particle::setPos(glm::vec2 vec) { mPos = vec; };
-void Particle::setVel(glm::vec2 vec) { mVel = vec; };

@@ -7,6 +7,12 @@
 },
 {
   "directory": "/Users/eneedley/dev/cpp/UPPS/build",
+  "command": "/usr/bin/c++  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/Users/eneedley/dev/cpp/UPPS/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64 -o CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/ParticleQueue.cpp",
+  "file": "/Users/eneedley/dev/cpp/UPPS/src/ParticleQueue.cpp",
+  "output": "CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o"
+},
+{
+  "directory": "/Users/eneedley/dev/cpp/UPPS/build",
   "command": "/usr/bin/c++  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/Users/eneedley/dev/cpp/UPPS/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64 -o CMakeFiles/UPPS.dir/src/Renderer.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/Renderer.cpp",
   "file": "/Users/eneedley/dev/cpp/UPPS/src/Renderer.cpp",
   "output": "CMakeFiles/UPPS.dir/src/Renderer.cpp.o"

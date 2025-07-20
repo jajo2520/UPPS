@@ -85,12 +85,12 @@ clean: CMakeFiles/UPPS.dir/clean
 CMakeFiles/UPPS.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target UPPS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target UPPS"
 .PHONY : CMakeFiles/UPPS.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/UPPS.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eneedley/dev/cpp/UPPS/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eneedley/dev/cpp/UPPS/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/UPPS.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eneedley/dev/cpp/UPPS/build/CMakeFiles 0
 .PHONY : CMakeFiles/UPPS.dir/rule
@@ -102,7 +102,7 @@ UPPS: CMakeFiles/UPPS.dir/rule
 # codegen rule for target.
 CMakeFiles/UPPS.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target UPPS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target UPPS"
 .PHONY : CMakeFiles/UPPS.dir/codegen
 
 # clean rule for target.

@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/UPPS.dir/external/glad/glad.c.o.d"
   "CMakeFiles/UPPS.dir/src/Particle.cpp.o"
   "CMakeFiles/UPPS.dir/src/Particle.cpp.o.d"
+  "CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o"
+  "CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o.d"
   "CMakeFiles/UPPS.dir/src/Renderer.cpp.o"
   "CMakeFiles/UPPS.dir/src/Renderer.cpp.o.d"
   "CMakeFiles/UPPS.dir/src/main.cpp.o"

@@ -2,7 +2,7 @@
 #include <vector>
 #include <glm/glm.hpp>
 
-constexpr std::size_t verticesNum {15};
+constexpr std::size_t verticesNum {14};
 
 class Particle
 {
@@ -15,12 +15,11 @@ private:
     void genGeometry();
 public:
     Particle(float radius); 
+    Particle(float radius, float xpos, float ypos);
 
     float radius();
     std::vector<float>& vertices();
-    glm::vec2 pos();
-    glm::vec2 vel();
+    glm::vec2& pos();
+    glm::vec2& vel();
 
-    void setPos(glm::vec2 vec);
-    void setVel(glm::vec2 vec);
 };

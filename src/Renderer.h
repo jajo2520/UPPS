@@ -3,13 +3,14 @@
 #include <GLFW/glfw3.h>
 #include "Particle.h"
 #include "Shader.h"
+#include "ParticleQueue.h"
 
 class Renderer
 {
 public:
     Renderer();
     void draw(Particle particle);
-    void draw(std::vector<Particle> particles);
+    void draw(ParticleQueue particles);
     const unsigned int& VBO();
     const unsigned int& VAO();
     Shader& shaderProgram();
