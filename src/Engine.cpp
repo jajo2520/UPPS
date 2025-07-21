@@ -10,18 +10,18 @@ using size_t = std::size_t;
 void Engine::update(Particle& particle, int frameCount)
 {
 
-    if (std::abs(particle.vel().y) < 0.1 && frameCount > 100 && particle.pos().y <= 50) 
+    if (std::abs(particle.vel().y) < 0.1 && frameCount > 100 && particle.pos().y <= geometry::FLOOR) 
     {
-        particle.pos().y = 45;
+        particle.pos().y = geometry::FLOOR;
         particle.vel().y = 0;
     }
-    else if (particle.pos().y < 45 && particle.vel().y < 0)
+    else if (particle.pos().y < geometry::FLOOR && particle.vel().y < 0)
     {
         resolveFloorCollision(particle);
     }
-    else if ((particle.pos().x < 50 && particle.vel().x < 0) || (particle.pos().x > 750 && particle.vel().x > 0)) 
+    else if ((particle.pos().x < geometry::WALL_LEFT && particle.vel().x < 0) || (particle.pos().x > geometry::WALL_RIGHT && particle.vel().x > 0)) 
     {
-        particle.vel().x *= -constants::COFR;
+        particle.vel().x *= -physics::COFR;
     }
     else 
     {
@@ -45,13 +45,13 @@ void Engine::update(ParticleQueue& particles, int frameCount)
 
 void Engine::applyGravity(Particle& particle)
 {
-    particle.pos() += particle.vel() * constants::TIME_STEP;
-    particle.vel() += glm::vec2(0.0f, -400.f) * constants::TIME_STEP;
+    particle.pos() += particle.vel() * simulation::TIME_STEP;
+    particle.vel() += physics::GRAVITY * simulation::TIME_STEP;
 }
 
 void Engine::resolveFloorCollision(Particle& particle)
 {
-    particle.vel().y *= -(constants::COFR);
+    particle.vel().y *= -(physics::COFR);
     particle.pos().y = 45;
 }
 
@@ -76,7 +76,7 @@ void Engine::checkCollision(Particle& p1, Particle& p2)
 {
     glm::vec2 dVec {p1.pos() - p2.pos()};
     float dSquared {dVec.x*dVec.x + dVec.y*dVec.y};
-    if (dSquared < std::pow(constants::P_RADIUS*2, 2))
+    if (dSquared < std::pow(geometry::P_RADIUS*2, 2))
     {
         resolveCollision(p1, p2);
     }

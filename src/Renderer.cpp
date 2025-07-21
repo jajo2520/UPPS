@@ -5,6 +5,7 @@
 #include "Shader.h"
 #include <glm/glm.hpp>
 #include "ParticleQueue.h"
+#include "Constants.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height); 
 
@@ -30,7 +31,7 @@ int Renderer::initialiseWindow()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // apple thing
   
-    GLFWwindow* window = glfwCreateWindow(800, 800, "UPPS", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(screen::SCREEN_WIDTH, screen::SCREEN_HEIGHT, "UPPS", NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed to initialise window" << std::endl;
@@ -79,7 +80,7 @@ void Renderer::draw(Particle particle)
     glEnableVertexAttribArray(0);
 
     shaderProgram().setVec2("pos", particle.pos());
-    shaderProgram().setVec2("screenSize", glm::vec2(800, 800));
+    shaderProgram().setVec2("screenSize", glm::vec2(screen::SCREEN_WIDTH, screen::SCREEN_HEIGHT));
 
     glDrawArrays(GL_TRIANGLE_FAN, 0, verticesNum+2);
 }

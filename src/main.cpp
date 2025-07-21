@@ -21,7 +21,7 @@ RNG rng {};
 int main()
 {
 
-    ParticleQueue particles(50, constants::P_RADIUS);
+    ParticleQueue particles(50, geometry::P_RADIUS);
     for (auto& particle : particles)
     {
         particle.pos() = glm::vec2(rng.randInt(100, 700), rng.randInt(100, 700));
@@ -44,12 +44,12 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
 
         accumulator += deltaTime;
-        while (accumulator >= constants::TIME_STEP)
+        while (accumulator >= simulation::TIME_STEP)
         {     
             engine.update(particles, frameCount);  
             renderer.draw(particles);
 
-            accumulator -= constants::TIME_STEP;
+            accumulator -= simulation::TIME_STEP;
 
         }
 
