@@ -1,6 +1,12 @@
 [
 {
   "directory": "/Users/eneedley/dev/cpp/UPPS/build",
+  "command": "/usr/bin/c++  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/Users/eneedley/dev/cpp/UPPS/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64 -o CMakeFiles/UPPS.dir/src/Engine.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/Engine.cpp",
+  "file": "/Users/eneedley/dev/cpp/UPPS/src/Engine.cpp",
+  "output": "CMakeFiles/UPPS.dir/src/Engine.cpp.o"
+},
+{
+  "directory": "/Users/eneedley/dev/cpp/UPPS/build",
   "command": "/usr/bin/c++  -I/Users/eneedley/dev/cpp/UPPS/external/glad/include -I/Users/eneedley/dev/cpp/UPPS/include -I/opt/homebrew/Cellar/glfw/3.4/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64 -o CMakeFiles/UPPS.dir/src/Particle.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/Particle.cpp",
   "file": "/Users/eneedley/dev/cpp/UPPS/src/Particle.cpp",
   "output": "CMakeFiles/UPPS.dir/src/Particle.cpp.o"

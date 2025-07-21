@@ -8,25 +8,27 @@
 // for random num
 #include "RNG.h"
 #include "ParticleQueue.h"
+#include "Engine.h"
+#include "Constants.h"
 
 void processInput(GLFWwindow* window);
 GLfloat deltaTime {}; 
 GLfloat lastFrame {};
 int frameCount {};
 GLfloat accumulator {};
-float COFR {0.8};
-float timeStep {0.0167}; // 60 fps
 RNG rng {};
 
 int main()
 {
 
-    ParticleQueue particles(1000, 2);
+    ParticleQueue particles(50, constants::P_RADIUS);
     for (auto& particle : particles)
     {
         particle.pos() = glm::vec2(rng.randInt(100, 700), rng.randInt(100, 700));
+        particle.vel() = glm::vec2(rng.randInt(-2, 2), 0);
     }
     Renderer renderer;
+    Engine engine;
     GLFWwindow* window {renderer.window()};
     // RENDER LOOP
     while (!glfwWindowShouldClose(window))
@@ -42,30 +44,12 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
 
         accumulator += deltaTime;
-        while (accumulator >= timeStep)
+        while (accumulator >= constants::TIME_STEP)
         {     
-            for (auto& particle : particles)
-            {
-                if (std::abs(particle.vel().y) < 0.01 && frameCount > 100 && particle.pos().y <= 50) 
-                {
-                    particle.pos().y = 45;
-                    particle.vel().y = 0;
-                }
-                else if (particle.pos().y < 45 && particle.vel().y < 0)
-                {
-                    particle.vel().y *= -COFR;
-                    particle.pos().y = 45;
-                }
-                else 
-                {
-                    particle.pos() += particle.vel() * timeStep;
-                    particle.vel() += glm::vec2(0.0f, -400.f) * timeStep;
-                }
-                
-                renderer.draw(particle);
-            }
+            engine.update(particles, frameCount);  
+            renderer.draw(particles);
 
-            accumulator -= timeStep;
+            accumulator -= constants::TIME_STEP;
 
         }
 

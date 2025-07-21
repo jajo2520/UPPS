@@ -72,10 +72,24 @@ include CMakeFiles/UPPS.dir/flags.make
 CMakeFiles/UPPS.dir/codegen:
 .PHONY : CMakeFiles/UPPS.dir/codegen
 
+CMakeFiles/UPPS.dir/src/Engine.cpp.o: CMakeFiles/UPPS.dir/flags.make
+CMakeFiles/UPPS.dir/src/Engine.cpp.o: /Users/eneedley/dev/cpp/UPPS/src/Engine.cpp
+CMakeFiles/UPPS.dir/src/Engine.cpp.o: CMakeFiles/UPPS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/UPPS.dir/src/Engine.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UPPS.dir/src/Engine.cpp.o -MF CMakeFiles/UPPS.dir/src/Engine.cpp.o.d -o CMakeFiles/UPPS.dir/src/Engine.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/Engine.cpp
+
+CMakeFiles/UPPS.dir/src/Engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/UPPS.dir/src/Engine.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/eneedley/dev/cpp/UPPS/src/Engine.cpp > CMakeFiles/UPPS.dir/src/Engine.cpp.i
+
+CMakeFiles/UPPS.dir/src/Engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/UPPS.dir/src/Engine.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/eneedley/dev/cpp/UPPS/src/Engine.cpp -o CMakeFiles/UPPS.dir/src/Engine.cpp.s
+
 CMakeFiles/UPPS.dir/src/Particle.cpp.o: CMakeFiles/UPPS.dir/flags.make
 CMakeFiles/UPPS.dir/src/Particle.cpp.o: /Users/eneedley/dev/cpp/UPPS/src/Particle.cpp
 CMakeFiles/UPPS.dir/src/Particle.cpp.o: CMakeFiles/UPPS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/UPPS.dir/src/Particle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/UPPS.dir/src/Particle.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UPPS.dir/src/Particle.cpp.o -MF CMakeFiles/UPPS.dir/src/Particle.cpp.o.d -o CMakeFiles/UPPS.dir/src/Particle.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/Particle.cpp
 
 CMakeFiles/UPPS.dir/src/Particle.cpp.i: cmake_force
@@ -89,7 +103,7 @@ CMakeFiles/UPPS.dir/src/Particle.cpp.s: cmake_force
 CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o: CMakeFiles/UPPS.dir/flags.make
 CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o: /Users/eneedley/dev/cpp/UPPS/src/ParticleQueue.cpp
 CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o: CMakeFiles/UPPS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o -MF CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o.d -o CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/ParticleQueue.cpp
 
 CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.s: cmake_force
 CMakeFiles/UPPS.dir/src/Renderer.cpp.o: CMakeFiles/UPPS.dir/flags.make
 CMakeFiles/UPPS.dir/src/Renderer.cpp.o: /Users/eneedley/dev/cpp/UPPS/src/Renderer.cpp
 CMakeFiles/UPPS.dir/src/Renderer.cpp.o: CMakeFiles/UPPS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/UPPS.dir/src/Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/UPPS.dir/src/Renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UPPS.dir/src/Renderer.cpp.o -MF CMakeFiles/UPPS.dir/src/Renderer.cpp.o.d -o CMakeFiles/UPPS.dir/src/Renderer.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/Renderer.cpp
 
 CMakeFiles/UPPS.dir/src/Renderer.cpp.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/UPPS.dir/src/Renderer.cpp.s: cmake_force
 CMakeFiles/UPPS.dir/src/main.cpp.o: CMakeFiles/UPPS.dir/flags.make
 CMakeFiles/UPPS.dir/src/main.cpp.o: /Users/eneedley/dev/cpp/UPPS/src/main.cpp
 CMakeFiles/UPPS.dir/src/main.cpp.o: CMakeFiles/UPPS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/UPPS.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/UPPS.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UPPS.dir/src/main.cpp.o -MF CMakeFiles/UPPS.dir/src/main.cpp.o.d -o CMakeFiles/UPPS.dir/src/main.cpp.o -c /Users/eneedley/dev/cpp/UPPS/src/main.cpp
 
 CMakeFiles/UPPS.dir/src/main.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/UPPS.dir/src/main.cpp.s: cmake_force
 CMakeFiles/UPPS.dir/external/glad/glad.c.o: CMakeFiles/UPPS.dir/flags.make
 CMakeFiles/UPPS.dir/external/glad/glad.c.o: /Users/eneedley/dev/cpp/UPPS/external/glad/glad.c
 CMakeFiles/UPPS.dir/external/glad/glad.c.o: CMakeFiles/UPPS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/UPPS.dir/external/glad/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/UPPS.dir/external/glad/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/UPPS.dir/external/glad/glad.c.o -MF CMakeFiles/UPPS.dir/external/glad/glad.c.o.d -o CMakeFiles/UPPS.dir/external/glad/glad.c.o -c /Users/eneedley/dev/cpp/UPPS/external/glad/glad.c
 
 CMakeFiles/UPPS.dir/external/glad/glad.c.i: cmake_force
@@ -144,6 +158,7 @@ CMakeFiles/UPPS.dir/external/glad/glad.c.s: cmake_force
 
 # Object files for target UPPS
 UPPS_OBJECTS = \
+"CMakeFiles/UPPS.dir/src/Engine.cpp.o" \
 "CMakeFiles/UPPS.dir/src/Particle.cpp.o" \
 "CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o" \
 "CMakeFiles/UPPS.dir/src/Renderer.cpp.o" \
@@ -153,6 +168,7 @@ UPPS_OBJECTS = \
 # External object files for target UPPS
 UPPS_EXTERNAL_OBJECTS =
 
+UPPS: CMakeFiles/UPPS.dir/src/Engine.cpp.o
 UPPS: CMakeFiles/UPPS.dir/src/Particle.cpp.o
 UPPS: CMakeFiles/UPPS.dir/src/ParticleQueue.cpp.o
 UPPS: CMakeFiles/UPPS.dir/src/Renderer.cpp.o
@@ -160,7 +176,7 @@ UPPS: CMakeFiles/UPPS.dir/src/main.cpp.o
 UPPS: CMakeFiles/UPPS.dir/external/glad/glad.c.o
 UPPS: CMakeFiles/UPPS.dir/build.make
 UPPS: CMakeFiles/UPPS.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable UPPS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/eneedley/dev/cpp/UPPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable UPPS"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UPPS.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -153,6 +153,30 @@ external/glad/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/external/glad/glad.c.s
 .PHONY : external/glad/glad.c.s
 
+src/Engine.o: src/Engine.cpp.o
+.PHONY : src/Engine.o
+
+# target to build an object file
+src/Engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/Engine.cpp.o
+.PHONY : src/Engine.cpp.o
+
+src/Engine.i: src/Engine.cpp.i
+.PHONY : src/Engine.i
+
+# target to preprocess a source file
+src/Engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/Engine.cpp.i
+.PHONY : src/Engine.cpp.i
+
+src/Engine.s: src/Engine.cpp.s
+.PHONY : src/Engine.s
+
+# target to generate assembly for a file
+src/Engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UPPS.dir/build.make CMakeFiles/UPPS.dir/src/Engine.cpp.s
+.PHONY : src/Engine.cpp.s
+
 src/Particle.o: src/Particle.cpp.o
 .PHONY : src/Particle.o
 
@@ -261,6 +285,9 @@ help:
 	@echo "... external/glad/glad.o"
 	@echo "... external/glad/glad.i"
 	@echo "... external/glad/glad.s"
+	@echo "... src/Engine.o"
+	@echo "... src/Engine.i"
+	@echo "... src/Engine.s"
 	@echo "... src/Particle.o"
 	@echo "... src/Particle.i"
 	@echo "... src/Particle.s"

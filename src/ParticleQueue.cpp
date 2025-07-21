@@ -22,3 +22,8 @@ auto ParticleQueue::end() -> typename std::vector<Particle>::iterator
 {
     return mParticles.end();
 }
+
+size_t ParticleQueue::size()
+{
+    return mParticles.size();
+}
