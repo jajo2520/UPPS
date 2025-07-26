@@ -7,8 +7,15 @@
 
 using size_t = std::size_t;
 
+Engine::Engine() : grid{}
+{}
+
 void Engine::update(Particle& particle, int frameCount)
 {
+    size_t row = static_cast<size_t>(particle.pos().y / screen::CELL_SIZE);
+    size_t col = static_cast<size_t>(particle.pos().x / screen::CELL_SIZE);
+    grid.removeParticle(&particle, row, col);    
+    
 
     if (std::abs(particle.vel().y) < 0.1 && frameCount > 100 && particle.pos().y <= geometry::FLOOR) 
     {
@@ -19,6 +26,11 @@ void Engine::update(Particle& particle, int frameCount)
     {
         resolveFloorCollision(particle);
     }
+    else if (particle.pos().y > geometry::CEILING && particle.vel().y > 0)
+    {
+        particle.vel().y *= -physics::COFR;
+        particle.pos().y = geometry::CEILING;
+    }
     else if ((particle.pos().x < geometry::WALL_LEFT && particle.vel().x < 0) || (particle.pos().x > geometry::WALL_RIGHT && particle.vel().x > 0)) 
     {
         particle.vel().x *= -physics::COFR;
@@ -27,21 +39,70 @@ void Engine::update(Particle& particle, int frameCount)
     {
         applyGravity(particle);
     }
+    
+    row = static_cast<size_t>(particle.pos().y / screen::CELL_SIZE);
+    col = static_cast<size_t>(particle.pos().x / screen::CELL_SIZE);
+
+    grid.addParticle(&particle, row, col);
+
+
 }
 
-void Engine::update(ParticleQueue& particles, int frameCount)
+void Engine::gridLoop(size_t lowRow, size_t upRow, size_t lowCol, size_t upCol, Particle& particle)
 {
-    for (size_t i {}; i < particles.size(); ++i)
+    for (size_t i {lowRow}; i < upRow; ++i)
     {
-        update(particles[i], frameCount);
-        // check collisions
-        for (size_t j {}; j < particles.size(); ++j)
+        for (size_t j {lowCol}; j < upCol; ++j)
         {
-            if (i == j) continue;
-            checkCollision(particles[i], particles[j]);
+            std::vector<Particle*> particlePointers {grid.getParticles(i, j)};
+            for (Particle* partPoint : particlePointers)
+            {
+                if (&particle != partPoint)
+                {
+                    checkCollision(particle, *partPoint);
+                    // this is the shittiest code i have ever written
+                }
+            }
         }
     }
 }
+    
+void Engine::update(ParticleQueue& particles, int frameCount)
+{
+    // new collision checker
+    for (auto& particle : particles)
+    {
+        
+        update(particle, frameCount);
+
+        size_t row = static_cast<size_t>(particle.pos().y / screen::CELL_SIZE);
+        size_t col = static_cast<size_t>(particle.pos().x / screen::CELL_SIZE);
+        if (row > 0 && row < (screen::SCREEN_HEIGHT / screen::CELL_SIZE))
+        {
+            if (col > 0 && col < (screen::SCREEN_WIDTH / screen::CELL_SIZE))
+            {
+                gridLoop(row-1, row+1, col-1, col+1, particle);
+            }
+            else 
+            {
+                if (col <= 0)
+                    gridLoop(row-1, row+1, col, col+1, particle);
+                else 
+                    gridLoop(row-1, row+1, col-1, col, particle);
+            }
+        }
+        else 
+        {
+            if (row <= 0)
+                gridLoop(row, row+1, col-1, col+1, particle);
+            else 
+                gridLoop(row-1, row, col-1, col+1, particle);
+        }
+        
+    }
+}
+
+
 
 void Engine::applyGravity(Particle& particle)
 {
@@ -52,7 +113,7 @@ void Engine::applyGravity(Particle& particle)
 void Engine::resolveFloorCollision(Particle& particle)
 {
     particle.vel().y *= -(physics::COFR);
-    particle.pos().y = 45;
+    particle.pos().y = geometry::FLOOR;
 }
 
 void Engine::resolveCollision(Particle& p1, Particle& p2)

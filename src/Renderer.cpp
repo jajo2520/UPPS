@@ -80,6 +80,7 @@ void Renderer::draw(Particle particle)
     glEnableVertexAttribArray(0);
 
     shaderProgram().setVec2("pos", particle.pos());
+    shaderProgram().setVec2("vel", particle.vel());
     shaderProgram().setVec2("screenSize", glm::vec2(screen::SCREEN_WIDTH, screen::SCREEN_HEIGHT));
 
     glDrawArrays(GL_TRIANGLE_FAN, 0, verticesNum+2);

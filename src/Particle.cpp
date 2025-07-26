@@ -1,6 +1,7 @@
 #include <vector>
 #include <cmath>
 #include "Particle.h"
+#include "Constants.h"
 
 constexpr double PI {3.141592653};
 using size_t = std::size_t;
@@ -26,6 +27,11 @@ Particle::Particle(float radius) : mRadius {radius}, mVertices{std::vector<float
     genGeometry();
 }
 Particle::Particle(float radius, float xpos, float ypos) : mRadius {radius}, mVertices{std::vector<float>(2*(verticesNum+2))}, mPos{glm::vec2(xpos, ypos)}
+{
+    genGeometry();
+}
+
+Particle::Particle() : mRadius {geometry::P_RADIUS}
 {
     genGeometry();
 }

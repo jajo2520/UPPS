@@ -1,8 +1,9 @@
 #pragma once
 #include <vector>
 #include <glm/glm.hpp>
+#include "Constants.h"
 
-constexpr std::size_t verticesNum {14};
+constexpr std::size_t verticesNum {geometry::VERT_NUMBER};
 
 class Particle
 {
@@ -16,6 +17,7 @@ private:
 public:
     Particle(float radius); 
     Particle(float radius, float xpos, float ypos);
+    Particle();
 
     float radius();
     std::vector<float>& vertices();
