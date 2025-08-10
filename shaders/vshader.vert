@@ -2,6 +2,8 @@
 in vec2 aPos;
 uniform vec2 pos;
 uniform vec2 screenSize;
+uniform float meterLength;
+
 void main()
 {
     vec2 currentPos = aPos;

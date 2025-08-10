@@ -26,5 +26,7 @@ add_executable(${PROJECT_NAME} ${SRC} ${GLAD_SRC})
 target_link_libraries(${PROJECT_NAME}
     ${OPENGL_LIBRARIES}
     ${GLFW_LIBRARIES}
+    "-framework IOKit"
+    "-framework CoreFoundation"
 )
 

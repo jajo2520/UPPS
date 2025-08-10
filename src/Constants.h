@@ -1,15 +1,20 @@
 #pragma once
-#include "glm/glm.hpp"
+
+#include <vector>
+#include <glm/glm.hpp>
 
 namespace physics
 {
-    inline constexpr glm::vec2 GRAVITY {0.0f, -250.0f};
-    inline constexpr float COFR {0.5};
+    inline glm::vec2 GRAVITY {0.0f, -250.0f};
+    inline constexpr float COFR {.05};
 }
 
 namespace simulation 
 {
-    inline constexpr float TIME_STEP {0.0167};
+    inline constexpr float TIME_STEP {1.0/600};
+    inline int COLLISIONS {};
+    inline int TOTAL_COLLISIONS {};
+    inline int FRAME_COUNT {};
 }
 
 namespace screen
@@ -27,9 +32,9 @@ namespace geometry
     inline constexpr float WALL_RIGHT {screen::SCREEN_WIDTH - 50.f};
     inline constexpr float FLOOR {50.0f};
     inline constexpr float CEILING {screen::SCREEN_HEIGHT - 50.f};
-    inline constexpr float P_RADIUS {1.f};
-    inline constexpr int P_NUMBER {4400};
-    inline constexpr int VERT_NUMBER {7};
+    inline constexpr float P_RADIUS {0.9f};
+    inline constexpr int P_NUMBER {5200};
+    inline constexpr int VERT_NUMBER {5};
+    inline std::vector<float> P_VERTICES (2*(VERT_NUMBER+2));
 }
-
 

@@ -57,9 +57,11 @@ void Engine::gridLoop(size_t lowRow, size_t upRow, size_t lowCol, size_t upCol, 
             std::vector<Particle*> particlePointers {grid.getParticles(i, j)};
             for (Particle* partPoint : particlePointers)
             {
-                if (&particle != partPoint)
+                if (&particle > partPoint) // compare addresses avoid double checking
                 {
+
                     checkCollision(particle, *partPoint);
+                    simulation::COLLISIONS += 1;
                     // this is the shittiest code i have ever written
                 }
             }
@@ -101,7 +103,6 @@ void Engine::update(ParticleQueue& particles, int frameCount)
         
     }
 }
-
 
 
 void Engine::applyGravity(Particle& particle)

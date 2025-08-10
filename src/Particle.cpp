@@ -19,22 +19,26 @@ void Particle::genGeometry()
             mVertices[2*(verticesNum+1)] = static_cast<float>(xcoord);
             mVertices[2*(verticesNum+1)+1] = static_cast<float>(ycoord);
         }
+        geometry::P_VERTICES = mVertices;
     }
 }
 
-Particle::Particle(float radius) : mRadius {radius}, mVertices{std::vector<float>(2*(verticesNum+2))}
+Particle::Particle(float radius, bool first) : mRadius {radius}, mVertices{std::vector<float>(2*(verticesNum+2))}
 {
-    genGeometry();
+    if (first == true)
+        genGeometry();
+    else 
+        mVertices = geometry::P_VERTICES; // avoid generating verts more than once
+        
+        
+
 }
 Particle::Particle(float radius, float xpos, float ypos) : mRadius {radius}, mVertices{std::vector<float>(2*(verticesNum+2))}, mPos{glm::vec2(xpos, ypos)}
 {
     genGeometry();
 }
 
-Particle::Particle() : mRadius {geometry::P_RADIUS}
-{
-    genGeometry();
-}
+
 
 float Particle::radius() { return mRadius; }
 glm::vec2& Particle::pos() { return mPos; }

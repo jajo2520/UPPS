@@ -15,7 +15,8 @@ private:
 
     void genGeometry();
 public:
-    Particle(float radius); 
+    Particle(float radius, bool first);
+    Particle(float radius, std::vector<float>& verticles);
     Particle(float radius, float xpos, float ypos);
     Particle();
 
